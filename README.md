@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Calcite Components Create React App Sample
+
+### To setup Calcite icons:
+
+- in your `package.json`, add another entry under `scripts`:
+
+  `"copy": "cp -r 'node_modules/@esri/calcite-components/dist/calcite/assets/' ./public/assets/"`
+
+- save `package.json`
+- in your terminal app, type `npm run copy`
+
+## Create React App Information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
