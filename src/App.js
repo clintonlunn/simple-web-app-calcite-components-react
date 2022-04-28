@@ -26,7 +26,7 @@ function App() {
   const [activeAg, setActiveAg] = useState("");
   const [activePanel, setActivePanel] = useState("");
   const [webmapTitle, setWebmapTitle] = useState("My Webmap");
-  const [portalItem, setPortalItem] = useState(null);
+  // const [portalItem, setPortalItem] = useState(null);
   const [isTipManagerClosed, setIsTipManagerClosed] = useState(undefined);
   const [isActionBarExpanded, setIsActionBarExpanded] = useState(false);
   const [currentTheme, setCurrentTheme] = useState("light");
@@ -97,11 +97,7 @@ function App() {
     setisModalActive(true);
   };
 
-  const initWidgets = (view, webmapInfo) => {
-    console.log(webmapInfo);
-
-    setPortalItem(webmapInfo.portalItem);
-    setWebmapTitle(webmapInfo.portalItem.title);
+  const initWidgets = (view) => {
 
     new BasemapGallery({
       view,
@@ -173,7 +169,7 @@ function App() {
               ></CalciteAction>
             ))}
           </CalciteActionGroup>
-          <CalciteActionGroup>
+          {/* <CalciteActionGroup>
             <CalciteAction
               key={`ca_tips`}
               text="Tips"
@@ -188,7 +184,7 @@ function App() {
               onClick={() => onFeedbackAbClick()}
               active={activeAg === "feedback" ? "" : null}
             ></CalciteAction>
-          </CalciteActionGroup>
+          </CalciteActionGroup> */}
         </CalciteActionBar>
 
         {config.map((group) =>
@@ -197,7 +193,7 @@ function App() {
               return (
                 <CalciteInfoPanel
                   style={{ padding: "12px" }}
-                  portalItem={portalItem}
+                  // portalItem={portalItem}
                   heading="yeah"
                   heightScale="l"
                   widthScale="m"
@@ -221,7 +217,7 @@ function App() {
         )}
       </CalciteShellPanel>
 
-      <CalciteTipManager slot="center-row" closed={isTipManagerClosed}>
+      {/* <CalciteTipManager slot="center-row" closed={isTipManagerClosed}>
         <CalciteTipGroup groupTitle="Tips">
           <CalciteTip heading="Header">
             <img
@@ -252,7 +248,7 @@ function App() {
             </p>
           </CalciteTip>
         </CalciteTipGroup>
-      </CalciteTipManager>
+      </CalciteTipManager> */}
 
       <CalciteModal
         active={isModalActive}
